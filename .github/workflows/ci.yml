@@ -1,0 +1,32 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install bun
+        run: |
+          curl -fsSL https://bun.sh/install | bash
+          echo "/home/runner/.bun/bin" >> $GITHUB_PATH
+      - name: Bun version
+        run: bun -v
+      - name: Install deps
+        run: bun install
+      - name: Build
+        run: bun run build
+      - name: Copy CNAME into out/
+        if: always()
+        run: |
+          if [ -f CNAME ]; then cp CNAME out/CNAME || true; fi
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./out
