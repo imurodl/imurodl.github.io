@@ -1,12 +1,13 @@
 import type { Config } from "tailwindcss";
+import typography from "@tailwindcss/typography";
 
 export default {
   content: ["./src/**/*.{html,js,svelte,ts}"],
-  darkMode: 'class', // Enable class-based dark mode
+  darkMode: "class", // Enable class-based dark mode
 
   theme: {
     extend: {},
   },
 
-  plugins: [],
+  plugins: [typography],
 } as Config;
