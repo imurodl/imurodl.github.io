@@ -15,5 +15,8 @@
 		<p class="text-xl text-gray-600 dark:text-gray-300 mb-8">
 			Welcome to my minimalistic blog where I share thoughts on tech, code, and life.
 		</p>
+		<p class="text-gray-500 dark:text-gray-400">
+			Check out my <a href="/blog" class="text-blue-600 dark:text-blue-400 hover:underline">blog posts</a> or learn more <a href="/about" class="text-blue-600 dark:text-blue-400 hover:underline">about me</a>.
+		</p>
 	</div>
 </div>
