@@ -1,8 +1,8 @@
 ---
 title: "Welcome to My Blog"
 date: "2024-11-29"
-description: "This is my first blog post built with SvelteKit and mdsvex"
-tags: ["svelte", "blog", "web"]
+description: "First blog post."
+tags: ["blog", "developer"]
 published: true
 ---
 
