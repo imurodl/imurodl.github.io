@@ -7,7 +7,9 @@
   $effect(() => {
     if (browser) {
       const savedTheme = localStorage.getItem("theme");
-      const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      const prefersDark = window.matchMedia(
+        "(prefers-color-scheme: dark)"
+      ).matches;
 
       if (savedTheme === "dark" || (!savedTheme && prefersDark)) {
         document.documentElement.classList.add("dark");
@@ -32,7 +34,12 @@
   }
 </script>
 
-<Button variant="ghost" size="icon" onclick={toggleTheme} class="fixed bottom-6 right-6 z-50 rounded-full bg-card/80 backdrop-blur-md border border-border shadow-lg hover:bg-accent">
+<Button
+  variant="ghost"
+  size="icon"
+  onclick={toggleTheme}
+  class="fixed bottom-6 right-6 z-50 rounded-full bg-card/80 backdrop-blur-md border border-border shadow-lg hover:bg-accent"
+>
   {#if isDark}
     <!-- Sun Icon -->
     <svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

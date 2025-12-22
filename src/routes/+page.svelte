@@ -23,7 +23,10 @@
 
 <svelte:head>
   <title>Murod - Software Developer</title>
-  <meta name="description" content="Software developer crafting accessible, performant digital experiences." />
+  <meta
+    name="description"
+    content="Software developer crafting accessible, performant digital experiences."
+  />
 </svelte:head>
 
 <Navigation />
