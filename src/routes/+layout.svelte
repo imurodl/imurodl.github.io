@@ -20,8 +20,8 @@
   </script>
 </svelte:head>
 
-<!-- Main Content with Double Border Layout -->
-<div class="border-container double-border-inner bg-background text-foreground">
+<!-- Main Content with Striped Border Layout -->
+<div class="border-container bg-background text-foreground">
   <Navigation />
   <main class="bordered-content">
     {@render children()}

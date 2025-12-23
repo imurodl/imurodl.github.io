@@ -93,52 +93,48 @@
   --border-offset: max(1rem, calc((100vw - 1200px) / 2));
 }
 
-/* Double border layout - aihero.dev style */
+/* Double border layout - aihero.dev style with diagonal stripes */
 .border-container {
   position: relative;
   min-height: 100vh;
 }
 
-/* Outer borders */
+/* Striped border pattern - aihero.dev style */
 .border-container::before,
 .border-container::after {
   content: "";
   position: fixed;
   top: 0;
   bottom: 0;
-  width: 1px;
-  background: var(--border);
+  width: 14px;
   z-index: 60;
   pointer-events: none;
 }
 
 .border-container::before {
   left: var(--border-offset);
+  background:
+    repeating-linear-gradient(
+      -55deg,
+      transparent,
+      transparent 3px,
+      var(--border) 3px,
+      var(--border) 4px
+    ),
+    linear-gradient(to left, var(--border) 1px, transparent 1px);
 }
 
 .border-container::after {
   right: var(--border-offset);
-}
-
-/* Inner borders (double effect) */
-.double-border-inner::before,
-.double-border-inner::after {
-  content: "";
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  width: 5px;
-  background: var(--border);
-  z-index: 60;
-  pointer-events: none;
-}
-
-.double-border-inner::before {
-  left: calc(var(--border-offset) + 8px);
-}
-
-.double-border-inner::after {
-  right: calc(var(--border-offset) + 8px);
+  background:
+    repeating-linear-gradient(
+      -55deg,
+      transparent,
+      transparent 3px,
+      var(--border) 3px,
+      var(--border) 4px
+    ),
+    linear-gradient(to right, var(--border) 1px, transparent 1px);
 }
 
 @media (max-width: 768px) {
@@ -147,10 +143,10 @@
   }
 }
 
-/* Header positioned within the double borders */
+/* Header positioned within the striped borders */
 .header-within-borders {
-  left: calc(var(--border-offset) + 9px);
-  right: calc(var(--border-offset) + 9px);
+  left: calc(var(--border-offset) + 14px);
+  right: calc(var(--border-offset) + 14px);
 }
 
 /* Content wrapper to sit within borders */
