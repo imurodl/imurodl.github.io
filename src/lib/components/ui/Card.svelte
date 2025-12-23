@@ -12,7 +12,7 @@
 
 <div
   class={cn(
-    "rounded-lg border border-border bg-card text-card-foreground shadow",
+    "rounded-lg border border-border bg-card text-card-foreground transition-all duration-200",
     className
   )}
   role={onclick ? "button" : undefined}

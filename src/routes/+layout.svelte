@@ -1,7 +1,6 @@
 <script lang="ts">
   import "../app.css";
   import favicon from "$lib/assets/favicon.svg";
-  import ThemeToggle from "$lib/components/ThemeToggle.svelte";
 
   let { children } = $props();
 </script>
@@ -20,10 +19,9 @@
   </script>
 </svelte:head>
 
-<!-- Theme Toggle -->
-<ThemeToggle />
-
-<!-- Main Content -->
-<main class="min-h-screen bg-background text-foreground">
-  {@render children()}
-</main>
+<!-- Main Content with Double Border Layout -->
+<div class="border-container bg-background text-foreground">
+  <main class="bordered-content">
+    {@render children()}
+  </main>
+</div>

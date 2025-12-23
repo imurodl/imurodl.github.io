@@ -86,3 +86,60 @@
 .animate-slide-up {
   animation: slide-up 0.6s ease-out forwards;
 }
+
+/* Double border layout - aihero.dev style */
+.border-container {
+  position: relative;
+  min-height: 100vh;
+}
+
+.border-container::before,
+.border-container::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: var(--border);
+  z-index: 50;
+  pointer-events: none;
+}
+
+.border-container::before {
+  left: max(1rem, calc((100vw - 1200px) / 2));
+}
+
+.border-container::after {
+  right: max(1rem, calc((100vw - 1200px) / 2));
+}
+
+@media (max-width: 768px) {
+  .border-container::before {
+    left: 0.75rem;
+  }
+  .border-container::after {
+    right: 0.75rem;
+  }
+}
+
+/* Content wrapper to sit within borders */
+.bordered-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (max-width: 768px) {
+  .bordered-content {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+}
+
+/* Section divider line */
+.section-divider {
+  height: 1px;
+  background: var(--border);
+  width: 100%;
+}

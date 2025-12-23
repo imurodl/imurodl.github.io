@@ -88,181 +88,119 @@
   );
 </script>
 
-<section id="blog" bind:this={sectionRef} class="py-16 md:py-24 px-4 md:px-6">
-  <div class="max-w-6xl mx-auto">
+<section id="blog" bind:this={sectionRef} class="py-16 md:py-24">
+  <div class="max-w-5xl mx-auto">
     <div
       class="transition-all duration-1000 {isVisible
         ? 'animate-slide-up'
         : 'opacity-0 translate-y-8'}"
     >
       <h2
-        class="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 md:mb-16 text-center"
+        class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16"
       >
         Latest Thoughts
       </h2>
 
       <!-- Category filters -->
-      <div class="flex flex-wrap justify-center gap-2 mb-8 md:mb-12">
+      <div class="flex flex-wrap gap-2 mb-10">
         {#each categories as category}
-          <Button
-            variant={selectedCategory === category ? "default" : "outline"}
-            size="sm"
+          <button
             onclick={() => (selectedCategory = category)}
-            class="transition-all duration-200 text-xs md:text-sm"
+            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 {selectedCategory === category
+              ? 'bg-primary text-primary-foreground'
+              : 'border border-border text-muted-foreground hover:text-foreground hover:border-muted-foreground'}"
           >
             {category}
-          </Button>
+          </button>
         {/each}
       </div>
 
       <!-- Featured post -->
       {#if filteredPosts.length > 0}
-        <Card
-          class="mb-8 md:mb-12 overflow-hidden group hover:shadow-2xl transition-all duration-300"
-        >
-          <a href="/blog/{filteredPosts[0].slug}" class="block">
+        <a href="/blog/{filteredPosts[0].slug}" class="block mb-10 group">
+          <div class="border border-border rounded-lg overflow-hidden transition-all duration-200 hover:border-muted-foreground">
             <div class="md:flex">
               <div class="md:w-1/2">
                 <img
                   src={filteredPosts[0].image || "/placeholder.svg"}
                   alt={filteredPosts[0].title}
-                  class="w-full h-48 md:h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  class="w-full h-48 md:h-full object-cover"
                 />
               </div>
-              <div class="md:w-1/2 p-6 md:p-8">
-                <Badge variant="secondary" class="mb-3 md:mb-4 text-xs">
+              <div class="md:w-1/2 p-6">
+                <Badge variant="outline" class="mb-3 text-xs">
                   Featured
                 </Badge>
                 <h3
-                  class="text-xl md:text-2xl font-bold mb-3 md:mb-4 group-hover:text-primary transition-colors"
+                  class="text-xl md:text-2xl font-bold mb-3"
                 >
                   {filteredPosts[0].title}
                 </h3>
                 <p
-                  class="text-muted-foreground mb-4 md:mb-6 leading-relaxed text-sm md:text-base"
+                  class="text-muted-foreground mb-4 leading-relaxed text-sm"
                 >
                   {filteredPosts[0].description}
                 </p>
-                <div class="flex items-center justify-between">
-                  <div
-                    class="flex items-center space-x-3 md:space-x-4 text-xs md:text-sm text-muted-foreground"
-                  >
-                    <span>{filteredPosts[0].date}</span>
-                    <div class="flex items-center">
-                      <svg
-                        class="h-3 w-3 md:h-4 md:w-4 mr-1"
-                        fill="none"
-                        stroke="currentColor"
-                        viewBox="0 0 24 24"
-                      >
-                        <path
-                          stroke-linecap="round"
-                          stroke-linejoin="round"
-                          stroke-width="2"
-                          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                        />
-                      </svg>
-                      5 min read
-                    </div>
-                  </div>
-                  <Button variant="ghost" size="sm" class="text-xs md:text-sm">
-                    Read More
-                    <svg
-                      class="h-3 w-3 md:h-4 md:w-4 ml-1 md:ml-2"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M17 8l4 4m0 0l-4 4m4-4H3"
-                      />
-                    </svg>
-                  </Button>
+                <div class="flex items-center gap-4 text-xs text-muted-foreground">
+                  <span>{filteredPosts[0].date}</span>
+                  <span>5 min read</span>
                 </div>
               </div>
             </div>
-          </a>
-        </Card>
+          </div>
+        </a>
       {/if}
 
       <!-- Other posts -->
-      <div class="grid md:grid-cols-2 gap-6 md:gap-8">
-        {#each filteredPosts.slice(1) as post, index}
-          <a href="/blog/{post.slug}">
-            <Card
-              class="group cursor-pointer hover:shadow-xl transition-all duration-300 h-full"
+      <div class="grid md:grid-cols-2 gap-6">
+        {#each filteredPosts.slice(1) as post}
+          <a href="/blog/{post.slug}" class="group">
+            <div
+              class="border border-border rounded-lg overflow-hidden transition-all duration-200 hover:border-muted-foreground h-full"
             >
-              <div class="relative overflow-hidden rounded-t-lg">
+              <div class="relative overflow-hidden">
                 <img
                   src={post.image || "/placeholder.svg"}
                   alt={post.title}
-                  class="w-full h-40 md:h-48 object-cover group-hover:scale-105 transition-transform duration-300"
+                  class="w-full h-40 object-cover"
                 />
               </div>
-              <CardContent class="p-4 md:p-6">
-                <Badge variant="outline" class="mb-2 md:mb-3 text-xs">
+              <div class="p-5">
+                <Badge variant="outline" class="mb-3 text-xs">
                   {post.tags[0]}
                 </Badge>
                 <h3
-                  class="text-base md:text-lg font-semibold mb-2 md:mb-3 group-hover:text-primary transition-colors"
+                  class="text-base font-semibold mb-2"
                 >
                   {post.title}
                 </h3>
                 <p
-                  class="text-muted-foreground mb-3 md:mb-4 text-xs md:text-sm leading-relaxed"
+                  class="text-muted-foreground mb-4 text-sm leading-relaxed"
                 >
                   {post.description}
                 </p>
                 <div
-                  class="flex items-center justify-between text-xs text-muted-foreground"
+                  class="flex items-center gap-4 text-xs text-muted-foreground"
                 >
                   <span>{post.date}</span>
-                  <div class="flex items-center">
-                    <svg
-                      class="h-3 w-3 mr-1"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                    >
-                      <path
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        stroke-width="2"
-                        d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
-                      />
-                    </svg>
-                    5 min read
-                  </div>
+                  <span>5 min read</span>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
           </a>
         {/each}
       </div>
 
-      <div class="text-center mt-8 md:mt-12">
+      <div class="mt-10">
         <a href="/blog">
-          <Button variant="outline" size="lg" class="text-sm md:text-base">
+          <Button variant="outline">
             View All Posts
-            <svg
-              class="h-4 w-4 ml-2"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M17 8l4 4m0 0l-4 4m4-4H3"
-              />
-            </svg>
           </Button>
         </a>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Section divider -->
+<div class="section-divider"></div>

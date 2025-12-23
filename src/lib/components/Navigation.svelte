@@ -1,6 +1,7 @@
 <script lang="ts">
   import { onMount } from "svelte";
   import Button from "./ui/Button.svelte";
+  import ThemeToggle from "./ThemeToggle.svelte";
 
   const navItems = [
     { name: "About", href: "#about" },
@@ -55,7 +56,7 @@
 </script>
 
 <!-- Progress bar -->
-<div class="fixed top-0 left-0 w-full h-1 bg-muted z-50">
+<div class="fixed top-0 left-0 w-full h-[2px] bg-transparent z-50">
   <div
     class="h-full bg-primary transition-all duration-300 ease-out"
     style="width: {scrollProgress}%"
@@ -64,33 +65,33 @@
 
 <!-- Desktop Navigation -->
 <nav
-  class="hidden md:block fixed top-4 left-1/2 transform -translate-x-1/2 z-40 bg-card/80 backdrop-blur-md border border-border rounded-full px-6 py-3"
+  class="hidden md:flex fixed top-6 left-1/2 transform -translate-x-1/2 z-40 items-center gap-1 bg-card/90 backdrop-blur-md border border-border rounded-lg px-2 py-2"
 >
-  <div class="flex items-center space-x-6">
-    {#each navItems as item}
-      <Button
-        variant="ghost"
-        size="sm"
-        onclick={() => scrollToSection(item.href)}
-        class="text-sm font-medium transition-colors {activeSection ===
-        item.href.substring(1)
-          ? 'text-primary'
-          : 'text-muted-foreground hover:text-foreground'}"
-      >
-        {item.name}
-      </Button>
-    {/each}
-  </div>
+  {#each navItems as item}
+    <button
+      onclick={() => scrollToSection(item.href)}
+      class="px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 {activeSection ===
+      item.href.substring(1)
+        ? 'bg-accent text-foreground'
+        : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'}"
+    >
+      {item.name}
+    </button>
+  {/each}
+  <div class="w-px h-6 bg-border mx-1"></div>
+  <ThemeToggle />
 </nav>
 
 <!-- Mobile Navigation -->
 <nav class="md:hidden fixed top-4 left-4 right-4 z-40">
   <div
-    class="bg-card/80 backdrop-blur-md border border-border rounded-2xl px-4 py-3"
+    class="bg-card/90 backdrop-blur-md border border-border rounded-lg px-4 py-3"
   >
     <div class="flex items-center justify-between">
       <span class="font-semibold text-foreground">Murod</span>
-      <Button variant="ghost" size="icon" onclick={toggleMobileMenu}>
+      <div class="flex items-center gap-1">
+        <ThemeToggle />
+        <Button variant="ghost" size="icon" onclick={toggleMobileMenu}>
         {#if mobileMenuOpen}
           <svg
             class="h-5 w-5"
@@ -121,17 +122,18 @@
           </svg>
         {/if}
       </Button>
+      </div>
     </div>
 
     {#if mobileMenuOpen}
-      <div class="mt-4 pt-4 border-t border-border space-y-2">
+      <div class="mt-4 pt-4 border-t border-border space-y-1">
         {#each navItems as item}
           <button
             onclick={() => scrollToSection(item.href)}
-            class="block w-full text-left px-3 py-2 rounded-lg text-sm font-medium transition-colors {activeSection ===
+            class="block w-full text-left px-3 py-2 rounded-md text-sm font-medium transition-all duration-200 {activeSection ===
             item.href.substring(1)
-              ? 'bg-accent text-accent-foreground'
-              : 'text-muted-foreground hover:bg-accent hover:text-accent-foreground'}"
+              ? 'bg-accent text-foreground'
+              : 'text-muted-foreground hover:bg-accent/50 hover:text-foreground'}"
           >
             {item.name}
           </button>

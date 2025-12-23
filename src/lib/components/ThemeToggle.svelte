@@ -1,6 +1,5 @@
 <script lang="ts">
   import { browser } from "$app/environment";
-  import Button from "./ui/Button.svelte";
 
   let isDark = $state(false);
 
@@ -34,11 +33,10 @@
   }
 </script>
 
-<Button
-  variant="ghost"
-  size="icon"
+<button
   onclick={toggleTheme}
-  class="fixed bottom-6 right-6 z-50 rounded-full bg-card/80 backdrop-blur-md border border-border shadow-lg hover:bg-accent"
+  class="p-2 rounded-md text-muted-foreground hover:text-foreground hover:bg-accent/50 transition-all duration-200"
+  aria-label="Toggle theme"
 >
   {#if isDark}
     <!-- Sun Icon -->
@@ -61,4 +59,4 @@
       />
     </svg>
   {/if}
-</Button>
+</button>

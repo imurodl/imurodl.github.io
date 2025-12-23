@@ -50,43 +50,38 @@
 <section
   id="contact"
   bind:this={sectionRef}
-  class="py-16 md:py-24 px-4 md:px-6 bg-muted/30"
+  class="py-16 md:py-24"
 >
-  <div class="max-w-6xl mx-auto">
+  <div class="max-w-5xl mx-auto">
     <div
       class="transition-all duration-1000 {isVisible
         ? 'animate-slide-up'
         : 'opacity-0 translate-y-8'}"
     >
       <h2
-        class="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 md:mb-16 text-center"
+        class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16"
       >
         Let's Work Together
       </h2>
 
-      <div class="grid lg:grid-cols-2 gap-8 md:gap-16">
+      <div class="grid lg:grid-cols-2 gap-12 md:gap-16">
         <!-- Contact info -->
-        <div class="space-y-6 md:space-y-8">
-          <div>
-            <h3 class="text-xl md:text-2xl font-semibold mb-4 md:mb-6">
-              Get In Touch
-            </h3>
-            <p
-              class="text-base md:text-lg text-muted-foreground leading-relaxed mb-6 md:mb-8"
-            >
-              I'm always interested in discussing new projects, creative ideas,
-              or opportunities to be part of your vision. Let's create something
-              amazing together.
-            </p>
-          </div>
+        <div class="space-y-8">
+          <p
+            class="text-base md:text-lg text-muted-foreground leading-relaxed"
+          >
+            I'm always interested in discussing new projects, creative ideas,
+            or opportunities to be part of your vision. Let's create something
+            amazing together.
+          </p>
 
-          <div class="space-y-4 md:space-y-6">
-            <div class="flex items-center space-x-4">
+          <div class="space-y-4">
+            <a href="mailto:hello@murod.dev" class="flex items-center gap-4 p-4 border border-border rounded-lg hover:border-muted-foreground transition-colors">
               <div
-                class="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+                class="w-10 h-10 border border-border rounded-lg flex items-center justify-center"
               >
                 <svg
-                  class="h-4 w-4 md:h-5 md:w-5 text-primary"
+                  class="h-4 w-4 text-muted-foreground"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -100,19 +95,19 @@
                 </svg>
               </div>
               <div>
-                <p class="font-medium text-sm md:text-base">Email</p>
-                <p class="text-muted-foreground text-sm md:text-base">
+                <p class="font-medium text-sm">Email</p>
+                <p class="text-muted-foreground text-sm">
                   hello@murod.dev
                 </p>
               </div>
-            </div>
+            </a>
 
-            <div class="flex items-center space-x-4">
+            <a href="https://github.com/murod" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 border border-border rounded-lg hover:border-muted-foreground transition-colors">
               <div
-                class="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+                class="w-10 h-10 border border-border rounded-lg flex items-center justify-center"
               >
                 <svg
-                  class="h-4 w-4 md:h-5 md:w-5 text-primary"
+                  class="h-4 w-4 text-muted-foreground"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -122,19 +117,19 @@
                 </svg>
               </div>
               <div>
-                <p class="font-medium text-sm md:text-base">GitHub</p>
-                <p class="text-muted-foreground text-sm md:text-base">
+                <p class="font-medium text-sm">GitHub</p>
+                <p class="text-muted-foreground text-sm">
                   github.com/murod
                 </p>
               </div>
-            </div>
+            </a>
 
-            <div class="flex items-center space-x-4">
+            <a href="https://linkedin.com/in/murod" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 border border-border rounded-lg hover:border-muted-foreground transition-colors">
               <div
-                class="w-10 h-10 md:w-12 md:h-12 bg-primary/10 rounded-lg flex items-center justify-center"
+                class="w-10 h-10 border border-border rounded-lg flex items-center justify-center"
               >
                 <svg
-                  class="h-4 w-4 md:h-5 md:w-5 text-primary"
+                  class="h-4 w-4 text-muted-foreground"
                   fill="currentColor"
                   viewBox="0 0 24 24"
                 >
@@ -144,110 +139,89 @@
                 </svg>
               </div>
               <div>
-                <p class="font-medium text-sm md:text-base">LinkedIn</p>
-                <p class="text-muted-foreground text-sm md:text-base">
+                <p class="font-medium text-sm">LinkedIn</p>
+                <p class="text-muted-foreground text-sm">
                   linkedin.com/in/murod
                 </p>
               </div>
-            </div>
+            </a>
           </div>
 
-          <div class="pt-4 md:pt-8">
-            <p class="text-xs md:text-sm text-muted-foreground mb-2 md:mb-4">
-              Response time: Usually within 24 hours
-            </p>
-            <p class="text-xs md:text-sm text-muted-foreground">
-              Available for freelance projects and full-time opportunities
-            </p>
-          </div>
+          <p class="text-sm text-muted-foreground">
+            Response time: Usually within 24 hours
+          </p>
         </div>
 
         <!-- Contact form -->
-        <Card>
-          <CardContent class="p-6 md:p-8">
-            <form onsubmit={handleSubmit} class="space-y-4 md:space-y-6">
-              <div class="grid md:grid-cols-2 gap-4">
-                <div class="space-y-2">
-                  <Label for="name">Name *</Label>
-                  <Input
-                    id="name"
-                    name="name"
-                    bind:value={formData.name}
-                    required
-                    placeholder="Your name"
-                  />
-                </div>
-                <div class="space-y-2">
-                  <Label for="email">Email *</Label>
-                  <Input
-                    id="email"
-                    name="email"
-                    type="email"
-                    bind:value={formData.email}
-                    required
-                    placeholder="your@email.com"
-                  />
-                </div>
-              </div>
-
+        <div class="border border-border rounded-lg p-6">
+          <form onsubmit={handleSubmit} class="space-y-5">
+            <div class="grid md:grid-cols-2 gap-4">
               <div class="space-y-2">
-                <Label for="subject">Subject *</Label>
+                <Label for="name">Name</Label>
                 <Input
-                  id="subject"
-                  name="subject"
-                  bind:value={formData.subject}
+                  id="name"
+                  name="name"
+                  bind:value={formData.name}
                   required
-                  placeholder="What's this about?"
+                  placeholder="Your name"
                 />
               </div>
-
               <div class="space-y-2">
-                <Label for="message">Message *</Label>
-                <Textarea
-                  id="message"
-                  name="message"
-                  bind:value={formData.message}
+                <Label for="email">Email</Label>
+                <Input
+                  id="email"
+                  name="email"
+                  type="email"
+                  bind:value={formData.email}
                   required
-                  placeholder="Tell me about your project..."
-                  rows={6}
+                  placeholder="your@email.com"
                 />
               </div>
+            </div>
 
-              <Button
-                type="submit"
-                size="lg"
-                class="w-full"
-                disabled={isSubmitting}
-              >
-                {#if isSubmitting}
-                  Sending...
-                {:else}
-                  Send Message
-                  <svg
-                    class="h-4 w-4 ml-2"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                    />
-                  </svg>
-                {/if}
-              </Button>
-            </form>
-          </CardContent>
-        </Card>
+            <div class="space-y-2">
+              <Label for="subject">Subject</Label>
+              <Input
+                id="subject"
+                name="subject"
+                bind:value={formData.subject}
+                required
+                placeholder="What's this about?"
+              />
+            </div>
+
+            <div class="space-y-2">
+              <Label for="message">Message</Label>
+              <Textarea
+                id="message"
+                name="message"
+                bind:value={formData.message}
+                required
+                placeholder="Tell me about your project..."
+                rows={5}
+              />
+            </div>
+
+            <Button
+              type="submit"
+              class="w-full"
+              disabled={isSubmitting}
+            >
+              {#if isSubmitting}
+                Sending...
+              {:else}
+                Send Message
+              {/if}
+            </Button>
+          </form>
+        </div>
       </div>
 
       <!-- Footer -->
       <div
-        class="text-center mt-16 md:mt-24 pt-8 md:pt-12 border-t border-border"
+        class="mt-16 md:mt-24 pt-8 border-t border-border"
       >
-        <p class="text-muted-foreground text-sm md:text-base">
+        <p class="text-muted-foreground text-sm">
           © 2025 Murod. Crafted with care.
         </p>
       </div>

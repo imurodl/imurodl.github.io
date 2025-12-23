@@ -71,22 +71,22 @@
   });
 </script>
 
-<section id="about" bind:this={sectionRef} class="py-16 md:py-24 px-4 md:px-6">
-  <div class="max-w-6xl mx-auto">
+<section id="about" bind:this={sectionRef} class="py-16 md:py-24">
+  <div class="max-w-5xl mx-auto">
     <div
       class="transition-all duration-1000 {isVisible
         ? 'animate-slide-up'
         : 'opacity-0 translate-y-8'}"
     >
       <h2
-        class="text-3xl md:text-4xl lg:text-6xl font-bold mb-8 md:mb-16 text-center"
+        class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16"
       >
         About Me
       </h2>
 
-      <div class="grid lg:grid-cols-2 gap-8 md:gap-16 items-start">
+      <div class="grid lg:grid-cols-2 gap-12 md:gap-16 items-start">
         <!-- Personal story -->
-        <div class="space-y-4 md:space-y-6">
+        <div class="space-y-6">
           <p class="text-base md:text-lg leading-relaxed text-muted-foreground">
             I'm a passionate software developer with experience in crafting
             user-centered digital experiences. My journey began with a
@@ -107,13 +107,13 @@
           </p>
 
           <!-- Skills -->
-          <div class="pt-4 md:pt-8">
-            <h3 class="text-lg md:text-xl font-semibold mb-3 md:mb-4">
+          <div class="pt-6">
+            <h3 class="text-lg font-semibold mb-4">
               Skills & Technologies
             </h3>
-            <div class="flex flex-wrap gap-1.5 md:gap-2">
+            <div class="flex flex-wrap gap-2">
               {#each skills as skill}
-                <Badge variant="secondary" class="text-xs md:text-sm">
+                <Badge variant="outline">
                   {skill}
                 </Badge>
               {/each}
@@ -122,36 +122,37 @@
         </div>
 
         <!-- Timeline -->
-        <div class="space-y-4 md:space-y-6">
-          <h3 class="text-lg md:text-xl font-semibold mb-4 md:mb-8">
+        <div class="space-y-4">
+          <h3 class="text-lg font-semibold mb-6">
             Professional Journey
           </h3>
           {#each timeline as item}
-            <Card class="border-l-4 border-l-primary">
-              <CardContent class="p-4 md:p-6">
-                <div
-                  class="text-xs md:text-sm text-muted-foreground font-mono mb-1 md:mb-2"
-                >
-                  {item.year}
-                </div>
-                <h4 class="text-base md:text-lg font-semibold mb-0.5 md:mb-1">
-                  {item.role}
-                </h4>
-                <div
-                  class="text-primary font-medium mb-2 md:mb-3 text-sm md:text-base"
-                >
-                  {item.company}
-                </div>
-                <p
-                  class="text-muted-foreground leading-relaxed text-sm md:text-base"
-                >
-                  {item.description}
-                </p>
-              </CardContent>
-            </Card>
+            <div class="border-l-2 border-border pl-6 pb-6 last:pb-0">
+              <div
+                class="text-xs text-muted-foreground font-mono mb-1"
+              >
+                {item.year}
+              </div>
+              <h4 class="text-base font-semibold">
+                {item.role}
+              </h4>
+              <div
+                class="text-sm text-muted-foreground mb-2"
+              >
+                {item.company}
+              </div>
+              <p
+                class="text-sm text-muted-foreground leading-relaxed"
+              >
+                {item.description}
+              </p>
+            </div>
           {/each}
         </div>
       </div>
     </div>
   </div>
 </section>
+
+<!-- Section divider -->
+<div class="section-divider"></div>
