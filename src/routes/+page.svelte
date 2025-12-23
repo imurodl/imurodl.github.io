@@ -1,5 +1,4 @@
 <script lang="ts">
-  import Navigation from "$lib/components/Navigation.svelte";
   import Hero from "$lib/components/Hero.svelte";
   import About from "$lib/components/About.svelte";
   import Portfolio from "$lib/components/Portfolio.svelte";
@@ -29,7 +28,6 @@
   />
 </svelte:head>
 
-<Navigation />
 <Hero />
 <About />
 <Portfolio />

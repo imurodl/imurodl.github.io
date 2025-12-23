@@ -55,43 +55,35 @@
   }
 </script>
 
-<!-- Progress bar -->
-<div class="fixed top-0 left-0 w-full h-[2px] bg-transparent z-50">
-  <div
-    class="h-full bg-primary transition-all duration-300 ease-out"
-    style="width: {scrollProgress}%"
-  ></div>
-</div>
+<!-- Full-width Header Navigation (inside double borders) -->
+<header class="fixed top-0 z-50 bg-background border-b border-border header-within-borders">
+  <div class="h-16 flex items-center justify-between px-6">
+    <!-- Logo -->
+    <a href="/" class="font-semibold text-foreground">
+      Murod
+    </a>
 
-<!-- Desktop Navigation -->
-<nav
-  class="hidden md:flex fixed top-6 left-1/2 transform -translate-x-1/2 z-40 items-center gap-1 bg-card/90 backdrop-blur-md border border-border rounded-lg px-2 py-2"
->
-  {#each navItems as item}
-    <button
-      onclick={() => scrollToSection(item.href)}
-      class="px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 {activeSection ===
-      item.href.substring(1)
-        ? 'bg-accent text-foreground'
-        : 'text-muted-foreground hover:text-foreground hover:bg-accent/50'}"
-    >
-      {item.name}
-    </button>
-  {/each}
-  <div class="w-px h-6 bg-border mx-1"></div>
-  <ThemeToggle />
-</nav>
+    <!-- Desktop Navigation -->
+    <nav class="hidden md:flex items-center gap-1">
+      {#each navItems as item}
+        <button
+          onclick={() => scrollToSection(item.href)}
+          class="px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 {activeSection ===
+          item.href.substring(1)
+            ? 'text-foreground'
+            : 'text-muted-foreground hover:text-foreground'}"
+        >
+          {item.name}
+        </button>
+      {/each}
+    </nav>
 
-<!-- Mobile Navigation -->
-<nav class="md:hidden fixed top-4 left-4 right-4 z-40">
-  <div
-    class="bg-card/90 backdrop-blur-md border border-border rounded-lg px-4 py-3"
-  >
-    <div class="flex items-center justify-between">
-      <span class="font-semibold text-foreground">Murod</span>
-      <div class="flex items-center gap-1">
-        <ThemeToggle />
-        <Button variant="ghost" size="icon" onclick={toggleMobileMenu}>
+    <!-- Right side: Theme toggle + Mobile menu -->
+    <div class="flex items-center gap-2">
+      <ThemeToggle />
+
+      <!-- Mobile menu button -->
+      <Button variant="ghost" size="icon" class="md:hidden" onclick={toggleMobileMenu}>
         {#if mobileMenuOpen}
           <svg
             class="h-5 w-5"
@@ -122,11 +114,13 @@
           </svg>
         {/if}
       </Button>
-      </div>
     </div>
+  </div>
 
-    {#if mobileMenuOpen}
-      <div class="mt-4 pt-4 border-t border-border space-y-1">
+  <!-- Mobile Navigation Menu -->
+  {#if mobileMenuOpen}
+    <div class="md:hidden border-t border-border bg-background">
+      <div class="px-6 py-4 space-y-1">
         {#each navItems as item}
           <button
             onclick={() => scrollToSection(item.href)}
@@ -139,6 +133,6 @@
           </button>
         {/each}
       </div>
-    {/if}
-  </div>
-</nav>
+    </div>
+  {/if}
+</header>

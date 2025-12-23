@@ -87,12 +87,19 @@
   animation: slide-up 0.6s ease-out forwards;
 }
 
+/* Header height variable */
+:root {
+  --header-height: 64px;
+  --border-offset: max(1rem, calc((100vw - 1200px) / 2));
+}
+
 /* Double border layout - aihero.dev style */
 .border-container {
   position: relative;
   min-height: 100vh;
 }
 
+/* Outer borders */
 .border-container::before,
 .border-container::after {
   content: "";
@@ -101,25 +108,49 @@
   bottom: 0;
   width: 1px;
   background: var(--border);
-  z-index: 50;
+  z-index: 60;
   pointer-events: none;
 }
 
 .border-container::before {
-  left: max(1rem, calc((100vw - 1200px) / 2));
+  left: var(--border-offset);
 }
 
 .border-container::after {
-  right: max(1rem, calc((100vw - 1200px) / 2));
+  right: var(--border-offset);
+}
+
+/* Inner borders (double effect) */
+.double-border-inner::before,
+.double-border-inner::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 5px;
+  background: var(--border);
+  z-index: 60;
+  pointer-events: none;
+}
+
+.double-border-inner::before {
+  left: calc(var(--border-offset) + 8px);
+}
+
+.double-border-inner::after {
+  right: calc(var(--border-offset) + 8px);
 }
 
 @media (max-width: 768px) {
-  .border-container::before {
-    left: 0.75rem;
+  :root {
+    --border-offset: 0.75rem;
   }
-  .border-container::after {
-    right: 0.75rem;
-  }
+}
+
+/* Header positioned within the double borders */
+.header-within-borders {
+  left: calc(var(--border-offset) + 9px);
+  right: calc(var(--border-offset) + 9px);
 }
 
 /* Content wrapper to sit within borders */
@@ -128,6 +159,7 @@
   margin: 0 auto;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  padding-top: var(--header-height);
 }
 
 @media (max-width: 768px) {
