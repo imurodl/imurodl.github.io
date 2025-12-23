@@ -16,8 +16,8 @@
     className
   )}
   role={onclick ? "button" : undefined}
-  tabindex={onclick ? 0 : undefined}
-  onclick={onclick}
+  {...onclick ? { tabindex: 0 } : {}}
+  {onclick}
   onkeydown={(e) => {
     if (onclick && (e.key === "Enter" || e.key === " ")) {
       e.preventDefault();

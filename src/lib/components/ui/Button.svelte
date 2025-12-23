@@ -32,8 +32,10 @@
     outline:
       "border border-input bg-background shadow-sm hover:bg-accent hover:text-accent-foreground",
     ghost: "hover:bg-accent hover:text-accent-foreground",
-    secondary: "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
-    destructive: "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
+    secondary:
+      "bg-secondary text-secondary-foreground shadow-sm hover:bg-secondary/80",
+    destructive:
+      "bg-destructive text-destructive-foreground shadow-sm hover:bg-destructive/90",
   };
 
   const sizes: Record<Size, string> = {
