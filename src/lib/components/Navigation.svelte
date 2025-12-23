@@ -57,33 +57,38 @@
 
 <!-- Full-width Header Navigation (inside double borders) -->
 <header class="fixed top-0 z-50 bg-background border-b border-border header-within-borders">
-  <div class="h-16 flex items-center justify-between px-6">
+  <div class="h-16 flex items-center justify-between">
     <!-- Logo -->
-    <a href="/" class="font-semibold text-foreground">
+    <a href="/" class="font-semibold text-foreground px-6 h-full flex items-center border-r border-border">
       Murod
     </a>
 
-    <!-- Desktop Navigation -->
-    <nav class="hidden md:flex items-center gap-1">
-      {#each navItems as item}
+    <!-- Desktop Navigation - Centered -->
+    <nav class="hidden md:flex items-center justify-center flex-1 h-full">
+      {#each navItems as item, i}
         <button
           onclick={() => scrollToSection(item.href)}
-          class="px-4 py-2 rounded-md text-sm font-medium transition-all duration-200 {activeSection ===
+          class="px-8 h-full text-sm font-medium transition-all duration-200 border-r border-border {i === 0 ? 'border-l' : ''} hover:bg-muted {activeSection ===
           item.href.substring(1)
-            ? 'text-foreground'
-            : 'text-muted-foreground hover:text-foreground'}"
+            ? 'text-foreground bg-muted'
+            : 'text-muted-foreground'}"
         >
           {item.name}
         </button>
       {/each}
     </nav>
 
+    <!-- Spacer to push right items -->
+    <div class="flex-1 md:hidden"></div>
+
     <!-- Right side: Theme toggle + Mobile menu -->
-    <div class="flex items-center gap-2">
-      <ThemeToggle />
+    <div class="flex items-center h-full">
+      <div class="border-l border-border h-full flex items-center px-4">
+        <ThemeToggle />
+      </div>
 
       <!-- Mobile menu button -->
-      <Button variant="ghost" size="icon" class="md:hidden" onclick={toggleMobileMenu}>
+      <Button variant="ghost" size="icon" class="md:hidden mx-2" onclick={toggleMobileMenu}>
         {#if mobileMenuOpen}
           <svg
             class="h-5 w-5"
