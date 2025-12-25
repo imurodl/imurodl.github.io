@@ -1,7 +1,5 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import Card from "./ui/Card.svelte";
-  import CardContent from "./ui/CardContent.svelte";
   import Badge from "./ui/Badge.svelte";
   import Button from "./ui/Button.svelte";
 
@@ -92,20 +90,14 @@
   }
 </script>
 
-<section
-  id="portfolio"
-  bind:this={sectionRef}
-  class="py-16 md:py-24"
->
+<section id="portfolio" bind:this={sectionRef} class="py-16 md:py-24">
   <div class="max-w-5xl mx-auto">
     <div
       class="transition-all duration-1000 {isVisible
         ? 'animate-slide-up'
         : 'opacity-0 translate-y-8'}"
     >
-      <h2
-        class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16"
-      >
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16">
         Selected Work
       </h2>
 
@@ -114,7 +106,8 @@
           <div
             class="group cursor-pointer border border-border rounded-lg overflow-hidden transition-all duration-200 hover:border-muted-foreground"
             onclick={() => toggleProject(index)}
-            onkeydown={(e) => (e.key === 'Enter' || e.key === ' ') && toggleProject(index)}
+            onkeydown={(e) =>
+              (e.key === "Enter" || e.key === " ") && toggleProject(index)}
             role="button"
             tabindex="0"
           >
@@ -127,15 +120,11 @@
             </div>
 
             <div class="p-5">
-              <h3
-                class="text-lg font-semibold mb-2"
-              >
+              <h3 class="text-lg font-semibold mb-2">
                 {project.title}
               </h3>
 
-              <p
-                class="text-sm text-muted-foreground mb-4 leading-relaxed"
-              >
+              <p class="text-sm text-muted-foreground mb-4 leading-relaxed">
                 {project.description}
               </p>
 
@@ -195,12 +184,8 @@
                   </div>
 
                   <div class="flex gap-3 pt-2">
-                    <Button size="sm" variant="outline">
-                      Live Demo
-                    </Button>
-                    <Button size="sm" variant="outline">
-                      Source Code
-                    </Button>
+                    <Button size="sm" variant="outline">Live Demo</Button>
+                    <Button size="sm" variant="outline">Source Code</Button>
                   </div>
                 </div>
               {/if}

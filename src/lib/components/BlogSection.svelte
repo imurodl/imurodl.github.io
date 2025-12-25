@@ -1,7 +1,5 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import Card from "./ui/Card.svelte";
-  import CardContent from "./ui/CardContent.svelte";
   import Badge from "./ui/Badge.svelte";
   import Button from "./ui/Button.svelte";
 
@@ -95,9 +93,7 @@
         ? 'animate-slide-up'
         : 'opacity-0 translate-y-8'}"
     >
-      <h2
-        class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16"
-      >
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16">
         Latest Thoughts
       </h2>
 
@@ -106,7 +102,8 @@
         {#each categories as category}
           <button
             onclick={() => (selectedCategory = category)}
-            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 {selectedCategory === category
+            class="px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 {selectedCategory ===
+            category
               ? 'bg-primary text-primary-foreground'
               : 'border border-border text-muted-foreground hover:text-foreground hover:border-muted-foreground'}"
           >
@@ -118,7 +115,9 @@
       <!-- Featured post -->
       {#if filteredPosts.length > 0}
         <a href="/blog/{filteredPosts[0].slug}" class="block mb-10 group">
-          <div class="border border-border rounded-lg overflow-hidden transition-all duration-200 hover:border-muted-foreground">
+          <div
+            class="border border-border rounded-lg overflow-hidden transition-all duration-200 hover:border-muted-foreground"
+          >
             <div class="md:flex">
               <div class="md:w-1/2">
                 <img
@@ -128,20 +127,16 @@
                 />
               </div>
               <div class="md:w-1/2 p-6">
-                <Badge variant="outline" class="mb-3 text-xs">
-                  Featured
-                </Badge>
-                <h3
-                  class="text-xl md:text-2xl font-bold mb-3"
-                >
+                <Badge variant="outline" class="mb-3 text-xs">Featured</Badge>
+                <h3 class="text-xl md:text-2xl font-bold mb-3">
                   {filteredPosts[0].title}
                 </h3>
-                <p
-                  class="text-muted-foreground mb-4 leading-relaxed text-sm"
-                >
+                <p class="text-muted-foreground mb-4 leading-relaxed text-sm">
                   {filteredPosts[0].description}
                 </p>
-                <div class="flex items-center gap-4 text-xs text-muted-foreground">
+                <div
+                  class="flex items-center gap-4 text-xs text-muted-foreground"
+                >
                   <span>{filteredPosts[0].date}</span>
                   <span>5 min read</span>
                 </div>
@@ -169,14 +164,10 @@
                 <Badge variant="outline" class="mb-3 text-xs">
                   {post.tags[0]}
                 </Badge>
-                <h3
-                  class="text-base font-semibold mb-2"
-                >
+                <h3 class="text-base font-semibold mb-2">
                   {post.title}
                 </h3>
-                <p
-                  class="text-muted-foreground mb-4 text-sm leading-relaxed"
-                >
+                <p class="text-muted-foreground mb-4 text-sm leading-relaxed">
                   {post.description}
                 </p>
                 <div
@@ -193,9 +184,7 @@
 
       <div class="mt-10">
         <a href="/blog">
-          <Button variant="outline">
-            View All Posts
-          </Button>
+          <Button variant="outline">View All Posts</Button>
         </a>
       </div>
     </div>

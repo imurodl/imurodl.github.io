@@ -47,36 +47,31 @@
   }
 </script>
 
-<section
-  id="contact"
-  bind:this={sectionRef}
-  class="py-16 md:py-24"
->
+<section id="contact" bind:this={sectionRef} class="py-16 md:py-24">
   <div class="max-w-5xl mx-auto">
     <div
       class="transition-all duration-1000 {isVisible
         ? 'animate-slide-up'
         : 'opacity-0 translate-y-8'}"
     >
-      <h2
-        class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16"
-      >
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16">
         Let's Work Together
       </h2>
 
       <div class="grid lg:grid-cols-2 gap-12 md:gap-16">
         <!-- Contact info -->
         <div class="space-y-8">
-          <p
-            class="text-base md:text-lg text-muted-foreground leading-relaxed"
-          >
-            I'm always interested in discussing new projects, creative ideas,
-            or opportunities to be part of your vision. Let's create something
+          <p class="text-base md:text-lg text-muted-foreground leading-relaxed">
+            I'm always interested in discussing new projects, creative ideas, or
+            opportunities to be part of your vision. Let's create something
             amazing together.
           </p>
 
           <div class="space-y-4">
-            <a href="mailto:hello@murod.dev" class="flex items-center gap-4 p-4 border border-border rounded-lg hover:border-muted-foreground transition-colors">
+            <a
+              href="mailto:hello@murod.dev"
+              class="flex items-center gap-4 p-4 border border-border rounded-lg hover:border-muted-foreground transition-colors"
+            >
               <div
                 class="w-10 h-10 border border-border rounded-lg flex items-center justify-center"
               >
@@ -96,13 +91,16 @@
               </div>
               <div>
                 <p class="font-medium text-sm">Email</p>
-                <p class="text-muted-foreground text-sm">
-                  hello@murod.dev
-                </p>
+                <p class="text-muted-foreground text-sm">hello@murod.dev</p>
               </div>
             </a>
 
-            <a href="https://github.com/murod" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 border border-border rounded-lg hover:border-muted-foreground transition-colors">
+            <a
+              href="https://github.com/murod"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-4 p-4 border border-border rounded-lg hover:border-muted-foreground transition-colors"
+            >
               <div
                 class="w-10 h-10 border border-border rounded-lg flex items-center justify-center"
               >
@@ -118,13 +116,16 @@
               </div>
               <div>
                 <p class="font-medium text-sm">GitHub</p>
-                <p class="text-muted-foreground text-sm">
-                  github.com/murod
-                </p>
+                <p class="text-muted-foreground text-sm">github.com/murod</p>
               </div>
             </a>
 
-            <a href="https://linkedin.com/in/murod" target="_blank" rel="noopener noreferrer" class="flex items-center gap-4 p-4 border border-border rounded-lg hover:border-muted-foreground transition-colors">
+            <a
+              href="https://linkedin.com/in/murod"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="flex items-center gap-4 p-4 border border-border rounded-lg hover:border-muted-foreground transition-colors"
+            >
               <div
                 class="w-10 h-10 border border-border rounded-lg flex items-center justify-center"
               >
@@ -202,11 +203,7 @@
               />
             </div>
 
-            <Button
-              type="submit"
-              class="w-full"
-              disabled={isSubmitting}
-            >
+            <Button type="submit" class="w-full" disabled={isSubmitting}>
               {#if isSubmitting}
                 Sending...
               {:else}
@@ -218,9 +215,7 @@
       </div>
 
       <!-- Footer -->
-      <div
-        class="mt-16 md:mt-24 pt-8 border-t border-border"
-      >
+      <div class="mt-16 md:mt-24 pt-8 border-t border-border">
         <p class="text-muted-foreground text-sm">
           © 2025 Murod. Crafted with care.
         </p>

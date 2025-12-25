@@ -1,7 +1,5 @@
 <script lang="ts">
   import { onMount } from "svelte";
-  import Card from "./ui/Card.svelte";
-  import CardContent from "./ui/CardContent.svelte";
   import Badge from "./ui/Badge.svelte";
 
   const skills = [
@@ -78,9 +76,7 @@
         ? 'animate-slide-up'
         : 'opacity-0 translate-y-8'}"
     >
-      <h2
-        class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16"
-      >
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-12 md:mb-16">
         About Me
       </h2>
 
@@ -108,9 +104,7 @@
 
           <!-- Skills -->
           <div class="pt-6">
-            <h3 class="text-lg font-semibold mb-4">
-              Skills & Technologies
-            </h3>
+            <h3 class="text-lg font-semibold mb-4">Skills & Technologies</h3>
             <div class="flex flex-wrap gap-2">
               {#each skills as skill}
                 <Badge variant="outline">
@@ -123,27 +117,19 @@
 
         <!-- Timeline -->
         <div class="space-y-4">
-          <h3 class="text-lg font-semibold mb-6">
-            Professional Journey
-          </h3>
+          <h3 class="text-lg font-semibold mb-6">Professional Journey</h3>
           {#each timeline as item}
             <div class="border-l-2 border-border pl-6 pb-6 last:pb-0">
-              <div
-                class="text-xs text-muted-foreground font-mono mb-1"
-              >
+              <div class="text-xs text-muted-foreground font-mono mb-1">
                 {item.year}
               </div>
               <h4 class="text-base font-semibold">
                 {item.role}
               </h4>
-              <div
-                class="text-sm text-muted-foreground mb-2"
-              >
+              <div class="text-sm text-muted-foreground mb-2">
                 {item.company}
               </div>
-              <p
-                class="text-sm text-muted-foreground leading-relaxed"
-              >
+              <p class="text-sm text-muted-foreground leading-relaxed">
                 {item.description}
               </p>
             </div>

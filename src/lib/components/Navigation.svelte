@@ -56,11 +56,18 @@
 </script>
 
 <!-- Full-width Header Navigation (inside double borders) -->
-<header class="fixed top-0 z-50 bg-background border-b border-border header-within-borders">
+<header
+  class="fixed top-0 z-50 bg-background border-b border-border header-within-borders"
+>
   <div class="h-16 flex items-center justify-between">
     <!-- Logo -->
-    <a href="/" class="font-semibold text-foreground px-6 h-full flex items-center border-r border-border">
-      Murod
+    <a
+      href="/"
+      class="font-semibold text-foreground px-6 h-full flex items-center border-r border-border"
+    >
+      Murod<span
+        class="inline-block w-1 h-1 bg-muted-foreground ml-0.5 translate-y-[5px]"
+      ></span>
     </a>
 
     <!-- Desktop Navigation - Centered -->
@@ -68,8 +75,10 @@
       {#each navItems as item, i}
         <button
           onclick={() => scrollToSection(item.href)}
-          class="px-8 h-full text-sm font-medium transition-all duration-200 border-r border-border {i === 0 ? 'border-l' : ''} hover:bg-muted {activeSection ===
-          item.href.substring(1)
+          class="px-8 h-full text-sm font-medium transition-all duration-200 border-r border-border {i ===
+          0
+            ? 'border-l'
+            : ''} hover:bg-muted {activeSection === item.href.substring(1)
             ? 'text-foreground bg-muted'
             : 'text-muted-foreground'}"
         >
@@ -88,37 +97,41 @@
       </div>
 
       <!-- Mobile menu button -->
-      <Button variant="ghost" size="icon" class="md:hidden mx-2" onclick={toggleMobileMenu}>
-        {#if mobileMenuOpen}
-          <svg
-            class="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M6 18L18 6M6 6l12 12"
-            />
-          </svg>
-        {:else}
-          <svg
-            class="h-5 w-5"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M4 6h16M4 12h16M4 18h16"
-            />
-          </svg>
-        {/if}
-      </Button>
+      <div
+        class="md:hidden border-l border-border h-full flex items-center px-2"
+      >
+        <Button variant="ghost" size="icon" onclick={toggleMobileMenu}>
+          {#if mobileMenuOpen}
+            <svg
+              class="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M6 18L18 6M6 6l12 12"
+              />
+            </svg>
+          {:else}
+            <svg
+              class="h-5 w-5"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          {/if}
+        </Button>
+      </div>
     </div>
   </div>
 

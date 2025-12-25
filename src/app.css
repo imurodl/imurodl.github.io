@@ -138,8 +138,9 @@
 }
 
 @media (max-width: 768px) {
-  :root {
-    --border-offset: 0.75rem;
+  .border-container::before,
+  .border-container::after {
+    display: none;
   }
 }
 
@@ -147,6 +148,13 @@
 .header-within-borders {
   left: calc(var(--border-offset) + 14px);
   right: calc(var(--border-offset) + 14px);
+}
+
+@media (max-width: 768px) {
+  .header-within-borders {
+    left: 0;
+    right: 0;
+  }
 }
 
 /* Content wrapper to sit within borders */
@@ -160,8 +168,8 @@
 
 @media (max-width: 768px) {
   .bordered-content {
-    padding-left: 1.25rem;
-    padding-right: 1.25rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 
