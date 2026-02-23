@@ -20,31 +20,31 @@
   const timeline = [
     {
       year: "2024 — Present",
-      role: "Senior Software Developer",
-      company: "Tech Company",
+      role: "Lorem Ipsum",
+      company: "Dolor Sit Amet",
       description:
-        "Leading frontend development and design systems initiatives.",
+        "Consectetur adipiscing elit, sed do eiusmod tempor incididunt.",
     },
     {
       year: "2022 — 2024",
-      role: "Full Stack Developer",
-      company: "Startup",
+      role: "Sed Do Eiusmod",
+      company: "Tempor Inc",
       description:
-        "Built scalable web applications serving thousands of users.",
+        "Ut labore et dolore magna aliqua ut enim ad minim veniam.",
     },
     {
       year: "2020 — 2022",
-      role: "Frontend Developer",
-      company: "Agency",
+      role: "Quis Nostrud",
+      company: "Exercitation LLC",
       description:
-        "Developed responsive web applications with focus on performance.",
+        "Ullamco laboris nisi ut aliquip ex ea commodo consequat duis.",
     },
     {
       year: "2018 — 2020",
-      role: "Junior Developer",
-      company: "Software House",
+      role: "Aute Irure Dolor",
+      company: "Reprehenderit Co",
       description:
-        "Started my journey in web development and learned best practices.",
+        "In voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     },
   ];
 
@@ -84,22 +84,15 @@
         <!-- Personal story -->
         <div class="space-y-6">
           <p class="text-base md:text-lg leading-relaxed text-muted-foreground">
-            I'm a passionate software developer with experience in crafting
-            user-centered digital experiences. My journey began with a
-            fascination for how technology can solve complex problems and create
-            meaningful connections between people and products.
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
           </p>
 
           <p class="text-base md:text-lg leading-relaxed text-muted-foreground">
-            I believe that great software should be accessible, performant, and
-            delightful for everyone. I focus on writing clean, maintainable code
-            while keeping the end user experience at the forefront.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
           </p>
 
           <p class="text-base md:text-lg leading-relaxed text-muted-foreground">
-            When I'm not coding, you'll find me exploring new technologies,
-            contributing to open-source projects, or writing about what I've
-            learned on my blog.
+            Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis.
           </p>
 
           <!-- Skills -->
