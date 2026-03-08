@@ -1,7 +1,5 @@
 <script lang="ts">
   import type { PageData } from "./$types";
-  import Card from "$lib/components/ui/Card.svelte";
-  import CardContent from "$lib/components/ui/CardContent.svelte";
   import Badge from "$lib/components/ui/Badge.svelte";
   import Button from "$lib/components/ui/Button.svelte";
 

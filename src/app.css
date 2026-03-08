@@ -267,12 +267,6 @@
   text-underline-offset: 0.2em;
 }
 
-.meta-note {
-  margin: 0;
-  color: var(--muted-foreground);
-  line-height: 1.7;
-}
-
 .terminal-footer {
   display: flex;
   flex-wrap: wrap;
