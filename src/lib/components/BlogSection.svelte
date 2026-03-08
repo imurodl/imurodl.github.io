@@ -48,15 +48,19 @@
     },
   ];
 
-  const displayPosts =
+  const displayPosts = $derived(
     posts.length > 0
       ? posts.map((p, i) => ({
           ...p,
           image: fallbackPosts[i % fallbackPosts.length].image,
         }))
-      : fallbackPosts;
+      : fallbackPosts
+  );
 
-  const categories = ["All", ...new Set(displayPosts.flatMap((p) => p.tags))];
+  const categories = $derived([
+    "All",
+    ...new Set(displayPosts.flatMap((p) => p.tags)),
+  ]);
 
   let isVisible = $state(false);
   let selectedCategory = $state("All");

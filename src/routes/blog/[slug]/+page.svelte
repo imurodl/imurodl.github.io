@@ -3,7 +3,8 @@
   import Badge from "$lib/components/ui/Badge.svelte";
 
   let { data }: { data: PageData } = $props();
-  const { content: Content, meta } = data;
+  const Content = $derived(data.content);
+  const meta = $derived(data.meta);
 
   function formatDate(date: string) {
     return new Date(date).toLocaleDateString("en-US", {

@@ -6,7 +6,7 @@
   import Button from "$lib/components/ui/Button.svelte";
 
   let { data }: { data: PageData } = $props();
-  const { posts } = data;
+  const posts = $derived(data.posts);
 
   function formatDate(date: string) {
     return new Date(date).toLocaleDateString("en-US", {
