@@ -6,12 +6,12 @@
       description: "Repositories, experiments, and the way I tend to build.",
     },
     {
-      href: "/cv",
+      href: "/cv.pdf",
       label: "CV",
       description: "Concise background, focus areas, and contact details.",
     },
     {
-      href: "https://www.linkedin.com/in/murod-mirzaliev-43554836b/",
+      href: "https://www.linkedin.com/in/imurodl/",
       label: "LinkedIn",
       description: "Work history, background, and the formal version of me.",
     },
@@ -34,7 +34,7 @@
   <title>Murod | Software Engineer</title>
   <meta
     name="description"
-    content="Murod is a software engineer focused on backend-leaning full-stack work, durable systems, and calm implementation."
+    content="Murod is a software engineer focused on AI products and cloud-native scalable backends."
   />
 </svelte:head>
 
@@ -51,10 +51,9 @@
         <h1 class="terminal-name">Murod</h1>
         <p class="terminal-role">Software engineer</p>
         <p class="terminal-copy">
-          I build software that is fast, durable, and boring in the right ways.
-          Most of my work sits between <strong>backend systems</strong>,
-          product engineering, and the implementation details that make
-          software easier to operate and easier to trust.
+          I build software that is fast, durable, and boring in the right
+          ways — mostly around <strong>AI products</strong> and
+          <strong>cloud-native scalable backends</strong>.
         </p>
       </div>
 
@@ -67,8 +66,8 @@
                 <a
                   class="terminal-link"
                   href={link.href}
-                  target={link.href.startsWith("http") ? "_blank" : undefined}
-                  rel={link.href.startsWith("http")
+                  target={link.href.startsWith("http") || link.href.endsWith(".pdf") ? "_blank" : undefined}
+                  rel={link.href.startsWith("http") || link.href.endsWith(".pdf")
                     ? "noreferrer noopener"
                     : undefined}
                 >
