@@ -48,7 +48,7 @@
     <div class="terminal-body">
       <div class="prompt-block">
         <p class="prompt-line">$ whoami</p>
-        <h1 class="terminal-name">Murod</h1>
+        <h1 class="terminal-name">Murod Mirzaliev</h1>
         <p class="terminal-role">Software engineer</p>
         <p class="terminal-copy">
           I build software that is fast, durable, and boring in the right
